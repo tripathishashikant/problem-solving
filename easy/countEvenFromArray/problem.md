@@ -92,7 +92,7 @@ function countEvenFromArray(arr) {
 
     if (num !== num) continue
 
-    if ( arr[i] % 2 === 0) count += 1
+    if ( num % 2 === 0) count += 1
   }
 
   return count
