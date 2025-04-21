@@ -1,7 +1,7 @@
-# 🧠 Check if All Elements Are Numbers
+# 🧠 Check if String is Palindrome or not
 
 ## 📝 Problem Statement  
-Write a function that checks whether all elements in a given array are numbers.
+Write a function that checks whether provided string is palindrome or not.
 
 ### ✅ Example:
 ```js
@@ -36,15 +36,8 @@ Let’s ask the right questions:
 
 | Scenario                         | Expected Behavior             |
 |----------------------------------|-------------------------------|
-| str is `null` or `undefined`     | Return undefinec              |
+| str is `null` or `undefined`     | Return undefined              |
 | str is not an String             | Return ''                     |
-
-
-### 🧠 Final Notes:
-- split
-- reverse
-- join
-
 ---
 
 ### 🔒 Final Version with Edge Case Handling:
