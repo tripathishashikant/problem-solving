@@ -76,6 +76,22 @@ function reverseString(str) {
   return str.split('').reverse().join('')
 }
 ```
+### 🔒 Version without using JavaScript function:
+
+```js
+function reverseStr(str) {
+  if ( str === null || str === undefined ) return undefined
+  if ( str.length === 0 ) return ''
+
+  let revStr = ''
+  
+  for (let i = (str.length - 1); i >= 0; i -= 1) {
+      revStr += str[i]
+  }
+  
+  return revStr
+}
+```
 
 ### 🧪 Extra Test Cases
 
