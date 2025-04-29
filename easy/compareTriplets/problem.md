@@ -36,7 +36,7 @@ Output: 3  // (4, 6, 10 are even)
 3. For each element:
    - If a's score is greater then b's score, then increment scores[0]
    - If b's score is greater then a's score, then increment scores[1]
-4. Return the counter
+4. Return the scores array
 
 ---
 
@@ -101,22 +101,32 @@ Let’s ask the right questions:
 [👉 View Final Code in `index.js`](./index.js)
 
 ```js
-function countEvenFromArray(arr) {
-  if ( !Array.isArray(arr)) return 0
+function compareTriplets(a, b) {
+  if (!Array.isArray(a) || !Array.isArray(a)) return undefined
+  
+  let alice = 0
+  let bob = 0
+  let len = a.length > b.length ? b.length : a.length
 
-  let count = 0
-  let arrLen = arr.length
-  let num = 0
-
-  for (let i = 0; i < arrLen; i += 1) {
-    num = Number(arr[i])
-
-    if (num !== num) continue
-
-    if ( num % 2 === 0) count += 1
+  for (let i = 0; i < len; i++) {
+    a[i] = Number(a[i])
+    b[i] = Number(b[i])
+    
+    // NaN is the only value not equal to itself
+    if (a[i] !== a[i] || b[i] !== b[i]) continue
+    
+    if (a[i] > b[i]) alice++
+    
+    if (a[i] < b[i]) bob++
   }
 
-  return count
+  return [alice, bob]
+}
+
+function compareTriplets(a, b) {
+  if (!Array.isArray(a) || !Array.isArray(b)) return undefined
+  
+  return a.reduce((s, v, i) => [s[0] + (v > b[i]), s[1] + (v < b[i])], [0, 0])
 }
 ```
 
